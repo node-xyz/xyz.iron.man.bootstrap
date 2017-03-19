@@ -18,8 +18,9 @@ before(function (done) {
 
 it('udp and http route secure', function (done) {
   _send('network', processes[identifiers[0]], (data) => {
-    expect(data.snd).to.equal(2)
-    expect(data.rcv).to.equal(2)
+    console.log(data)
+    expect(data.snd).to.above(2)
+    expect(data.rcv).to.above(2)
     done()
   })
 })

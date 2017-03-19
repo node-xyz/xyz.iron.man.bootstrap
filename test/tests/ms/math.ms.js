@@ -50,6 +50,6 @@ setInterval(() => {
     payload: 'hello'}, (err, body, response) => {
     console.log(`udp ${err} ${body}`)
   })
-}, 2000)
+}, 100)
 
 console.log(mathMs)
