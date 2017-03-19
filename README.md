@@ -1,7 +1,7 @@
 # xyz.iron.man.bootstrap
 End To End message encryption based on Iron
 
-[![Build Status](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap.svg?branch=master)](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap)
+[![Build Status](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap.svg?branch=master)](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap) [![npm version](https://badge.fury.io/js/xyz.iron.man.bootstrap.svg)](https://badge.fury.io/js/xyz.iron.man.bootstrap)
 
 ---
 
