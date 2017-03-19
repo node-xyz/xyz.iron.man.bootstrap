@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    {
+      "path": "./test/tests/ms/math.ms.js",
+      "instance": 1,
+      "port": 4000,
+      "stdio": "file",
+      "params": "--xyz-logLevel verbose --xyz-name math.ms --xyz-seed 127.0.0.1:9000"
+    }
+  ]
+}

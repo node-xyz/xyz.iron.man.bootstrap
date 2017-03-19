@@ -28,7 +28,6 @@ mathMs.bootstrap(IRON, {
   serverType: 'UDP'
 })
 
-
 mathMs.register('/math/float/neg', function (payload, XResponse) {
   if (XResponse) {
     XResponse.jsonify('ok whassssaaaap')

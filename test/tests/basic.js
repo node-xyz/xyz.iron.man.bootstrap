@@ -5,44 +5,32 @@ const _send = test.sendMessage
 let processes
 let identifiers = []
 let TESTER
-const TOTAL = 2
+const TOTAL = 1
 before(function (done) {
   this.timeout(15 * 1000)
   test.setUpTestEnv((p) => {
     processes = p
     identifiers = Object.keys(processes)
     TESTER = test.getTester()
-    setTimeout(done, 12 * 1000)
-  }, 'xyz.test.no.join.json')
+    setTimeout(done, 5 * 1000)
+  }, 'xyztestrc.json')
 })
 
-it('initial state', function (done) {
-  // TODO: if we find a way to set swim as the ping of admin node, we don't have to wait this long
-  _send('inspectJSON', processes[identifiers[0]], (data) => {
-    expect(data.global.systemConf.nodes.length).to.equal(TOTAL)
-    expect(Object.keys(data.ServiceRepository.foreignServices).length).to.equal(TOTAL)
-    _send('inspectJSON', processes[identifiers[1]], (data) => {
-      expect(Object.keys(data.ServiceRepository.foreignServices).length).to.equal(TOTAL)
-      expect(data.global.systemConf.nodes.length).to.equal(TOTAL)
-      done()
-    })
+it('udp and http route secure', function (done) {
+  _send('network', processes[identifiers[0]], (data) => {
+    expect(data.snd).to.equal(2)
+    expect(data.rcv).to.equal(2)
+    done()
   })
 })
 
-it('remove one of them', function (done) {
-  this.timeout(30 * 1000)
+it('tester will mess whith them', function (done) {
   TESTER.call({
-    servicePath: 'node/kill',
-    payload: `0`
-  }, (err, body, resp) => {
-    expect(body).to.equal('Done')
-    setTimeout(() => {
-      _send('inspectJSON', processes[identifiers[1]], (data) => {
-        expect(data.global.systemConf.nodes.length).to.equal(TOTAL - 1)
-        expect(Object.keys(data.ServiceRepository.foreignServices).length).to.equal(TOTAL - 1)
-        done()
-      })
-    }, 25 * 1000)
+    servicePath: '/math/float/neg',
+    payload: 'whatever'
+  }, (err, body) => {
+    expect(err).to.not.equal(null)
+    done()
   })
 })
 

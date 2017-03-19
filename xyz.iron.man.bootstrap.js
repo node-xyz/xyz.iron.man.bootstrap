@@ -19,6 +19,8 @@ function _ironAuthentication (xyz, config) {
   function _ironSealMsg (params, next, end, xyz) {
     let reqConfig = params[0]
     let responseCb = params[1]
+    console.log(`sealing ${JSON.stringify(reqConfig)}`)
+
     Iron.seal(reqConfig.json, PASSWD, ironConfig, (err, sealed) => {
       if (err) {
         logger.error(`IRON :: error while encrypting message ${err}`)
@@ -34,17 +36,28 @@ function _ironAuthentication (xyz, config) {
 
   function _ironHttpUnSealMsg (params, next, end, xyz) {
     let body = params[2]
+    let resp = params[1]
+
+    function fail (err) {
+      logger.error(`IRON [HTTP]:: error while decryping message :: ${err}`)
+      resp.writeHead(401)
+      resp.end(JSON.stringify({error: `IRON :: error while decryping message ${err}`}))
+      end()
+    }
+
+    if (typeof (body) !== 'string') {
+      fail('message type incorrect')
+      return
+    }
     Iron.unseal(body, PASSWD, ironConfig, (err, unsealed) => {
       if (err) {
-        let resp = params[1]
-        logger.error(`IRON [HTTP]:: error while decryping message ${err}`)
-        resp.writeHead(401)
-        resp.end(`IRON :: error while decryping message ${err}`)
-        end()
+        fail(err)
+        return
+      } else {
+        logger.silly(`IRON :: message has been unsealed to ${unsealed}`)
+        params[2] = unsealed
+        next()
       }
-      logger.silly(`IRON :: message has been unsealed to ${unsealed}`)
-      params[2] = unsealed
-      next()
     })
   }
 
