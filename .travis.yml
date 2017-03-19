@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '7'
+deploy:
+  provider: npm
+  email: kian.peymani@gmail.com
+  api_key:
+    secure: CcezO3QfQ1ji2HyvQWod4Onwu/sjVdMSwrgEotPAMt4Emp9uXMUhJJcueNh81ACl0iPdSCRADU7opE/RvDsSFgN679lIVIq4VuZh08tu502lO5IxsRU1lDttyNQjA6/eY7yLGUCoFBmrj0iKWHOMS/E6+LIIVc4H5Kj2mf//vtBHi31keRWPQknVMLoBSv4HpS3sZCaBX29aOCqEta/rCuUiVjCnqZm/fCKR+vu+YP3TKMnwFMXJql9u9W+gQANbnoWzImTLEThRS3kMqXWL1cH1oBpPBp0zQzQPwC2xLXH7+iqtPMSQ5M3R5keXJXLkG8fRq2vTQlihwSpvua7ZkyYpJxzVIOYwFmrNpAynOTSQ1Rs1QGs+vMbIQmzLKTgHdUg6QYq1sl1UiLpDQ2f2EopjHM++kH8Y5ddPbHTqeRMandYUYKPs7jCn06CuDVzp4dmj/pKt9lA4FdV5i56J93NmJ0iDCxfBcGraHSdD/2jEpi1ih+6EAf5sxmxV1jKEwoa8F2IBXzHBE8aAi1m2V0ztat6+NG5S8rB5c89Uw2SsoEBLIApUMS2WTVpZZ0PTb9no/fdTZFsWQGPvPrRtR6pgQEAOteU6DtJyw+6hDDlo3nMzrdJj/jB21vIN8xMXMgJIbWb5/eEb8oJkCo2GcS3+kOtpgmixLpI/3A4sxnw=
+  on:
+    repo: node-xyz/xyz.iron.man.bootstrap
+    branch: master

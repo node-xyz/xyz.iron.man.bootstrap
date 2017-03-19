@@ -1,0 +1,32 @@
+{
+  "name": "xyz.iron.man.bootstrap",
+  "version": "0.3.0",
+  "description": "End To End message encryption based on Iron Edit",
+  "main": "xyz.iron.man.bootstrap.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "test-travis": "rm -Rf node_modules && npm install && ./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/node-xyz/xyz.iron.man.bootstrap.git"
+  },
+  "dependencies": {
+    "iron": "^4.0.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "xyz-cli": "^0.3.1",
+    "xyz-core": "^0.3.1"
+  },
+  "keywords": [
+    "node-xyz"
+  ],
+  "author": "kian.peymani@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/node-xyz/xyz.iron.man.bootstrap/issues"
+  },
+  "homepage": "https://github.com/node-xyz/xyz.iron.man.bootstrap#readme"
+}
