@@ -52,9 +52,9 @@ where the second argument, `config` have the following keys:
 
 |    option   | default value   | description |
 |:-----------:|-----------------|-------------|
-| `config.clientRoute`         | CALL            | route of the outgoing route to encrypt       |
+| `config.clientRoute`         | 'CALL'            | route of the outgoing route to encrypt       |
 | `config.clientIndex`         | 0               | index to insert the client middleware       |
-| `config.serverRoute`         | 5000            | route of the server route to decrypt      |
+| `config.serverRoute`         | 'CALL'            | route of the server route to decrypt      |
 | `config.serverPort`          | `xyz.id().port` | port of the target server      |
 | `config.serverType`          | 'HTTP'          | type of the server identified by `config.serverPort`      |
 | `config.serverIndex`         | 0               | index to insert the middleware      |
