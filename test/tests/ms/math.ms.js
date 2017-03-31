@@ -35,12 +35,12 @@ mathMs.register('/math/float/neg', function (payload, XResponse) {
 })
 
 setInterval(() => {
-  mathMs.call({
-    servicePath: '/math/float/neg',
-    sendStrategy: sendTo(mathMs.id().netId),
-    payload: 'hello'}, (err, body, response) => {
-    console.log(err, body)
-  })
+  // mathMs.call({
+  //   servicePath: '/math/float/neg',
+  //   sendStrategy: sendTo(mathMs.id().netId),
+  //   payload: 'hello'}, (err, body, response) => {
+  //   console.log(err, body)
+  // })
 
   mathMs.call({
     servicePath: '/math/float/neg',

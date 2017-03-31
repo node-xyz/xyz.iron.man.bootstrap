@@ -56,9 +56,14 @@ where the second argument, `config` have the following keys:
 | `config.clientIndex`         | 0               | index to insert the client middleware       |
 | `config.serverRoute`         | 'CALL'            | route of the server route to decrypt      |
 | `config.serverPort`          | `xyz.id().port` | port of the target server      |
-| `config.serverType`          | 'HTTP'          | type of the server identified by `config.serverPort`      |
 | `config.serverIndex`         | 0               | index to insert the middleware      |
 | `config.PASSWD`              | see [here](https://github.com/node-xyz/xyz.iron.man.bootstrap/blob/master/xyz.iron.man.bootstrap.js#L13)               | Password used by Iron. should be long and a random string     |
 | `config.ironConfig`          | `Iron.defaults`               |  Iron configuration. see [here](https://github.com/hueniverse/iron) for more info      |
 
-Examples and tests are available in the `test` folder.
+Examples and tests are available in the `test` folder. In one of these example, we encrypt a route name `IRON_UDP`. if you run `math.ms` with `debug` logLevel, you will see a similar log:
+
+```bash
+[2017-3-31 15:35:5][math.ms@127.0.0.1:4000] debug :: UDP SERVER @ 5000 :: udp message received for /IRON_UDP [{"userPayload":"Fe26.2**a3451a22cfd6eeeb7a13e324457c5afa6751855e6bd7d8b61a0c4574d8a8df53*gMc5pf4S2XcvyD2koP-_RQ*5nK3Dwx7xD8Z10K4O7viGg**8e2f06a044dd26bfefd0a9f471ca9775c7dd6ec500abc5070724f61129baf916*rkLiE5g6OI2Us-7KoZkhPtKubyFiqCyV6gC-USgNAVU","xyzPayload":{"senderId":"127.0.0.1:4000","service":"/math/float/neg","route":"/IRON_UDP"}}]
+```
+
+As you see, the `userPayload` portion of the message, wich is all of the data that you pass to the `.call()` is being encrypted.
