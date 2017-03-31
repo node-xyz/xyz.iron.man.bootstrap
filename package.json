@@ -18,7 +18,7 @@
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "xyz-cli": "^0.3.1",
-    "xyz-core": "^0.3.4"
+    "xyz-core": "0.4.x"
   },
   "keywords": [
     "node-xyz"
