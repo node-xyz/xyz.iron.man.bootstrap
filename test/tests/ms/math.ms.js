@@ -1,7 +1,7 @@
 let XYZ = require('xyz-core')
 const fn = require('./../../mock.functions')
 const IRON = require('./../../../xyz.iron.man.bootstrap')
-const sendTo = require('xyz-core/src/Service/Middleware/service.sent.to.target')
+const sendTo = require('xyz-core/built/Service/Middleware/service.sent.to.target')
 
 var mathMs = new XYZ({
   selfConf: {
@@ -16,7 +16,7 @@ var mathMs = new XYZ({
 mathMs.bootstrap(IRON)
 
 // UDP
-mathMs.bootstrap(require('xyz-core/src/Bootstrap/udp.tunnel.bootstrap'), {
+mathMs.bootstrap(require('xyz-core/built/Bootstrap/udp.tunnel.bootstrap')._udpTunnel, {
   route: 'IRON_UDP',
   port: 5000
 })
