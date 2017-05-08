@@ -2,7 +2,7 @@
 End To End message encryption based on Iron
 
 [![Build Status](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap.svg?branch=master)](https://travis-ci.org/node-xyz/xyz.iron.man.bootstrap) [![npm version](https://badge.fury.io/js/xyz.iron.man.bootstrap.svg)](https://badge.fury.io/js/xyz.iron.man.bootstrap)
-
+[![dependencies Status](https://david-dm.org/node-xyz/xyz.iron.man.bootstrap/status.svg)](https://david-dm.org/node-xyz/xyz.iron.man.bootstrap)
 ---
 
 This repository integrates node's [Iron](https://github.com/hueniverse/iron) module to encrypt messages in xyz. It works end-to-end over a given route and port.
