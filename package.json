@@ -1,6 +1,6 @@
 {
   "name": "xyz.iron.man.bootstrap",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "End To End message encryption based on Iron Edit",
   "main": "xyz.iron.man.bootstrap.js",
   "scripts": {
